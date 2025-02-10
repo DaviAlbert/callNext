@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 23, "column": 0}, "map": {"version":3,"sources":["file://C%3A/callNext/call/src/styles/global.ts"],"sourcesContent":["import { globalCss } from \"@ignite-ui/react\";\r\n\r\nexport const globalStyles = globalCss({\r\n  '*': {\r\n    boxSizing: 'border-box',\r\n    padding: 0,\r\n    margin: 0,\r\n  },\r\n  body: {\r\n    backgroundColor: '$gray900',\r\n    color: '$gray100',\r\n    '-webkit-font-smoothing': 'antialiased',\r\n  },\r\n})"],"names":[],"mappings":";;;AAAA;;AAEO,MAAM,eAAe,CAAA,GAAA,uIAAA,CAAA,YAAS,AAAD,EAAE;IACpC,KAAK;QACH,WAAW;QACX,SAAS;QACT,QAAQ;IACV;IACA,MAAM;QACJ,iBAAiB;QACjB,OAAO;QACP,0BAA0B;IAC5B;AACF"}},
+    {"offset": {"line": 40, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file://C%3A/callNext/call/src/pages/_app.page.tsx"],"sourcesContent":["import type { AppProps } from 'next/app'\nimport { globalStyles } from \"../styles/global\"\nglobalStyles()\n\nexport default function App({ Component, pageProps }: AppProps) {\n  return <Component {...pageProps} />\n}"],"names":[],"mappings":";;;;AACA;;;AACA,CAAA,GAAA,gHAAA,CAAA,eAAY,AAAD;AAEI,SAAS,IAAI,EAAE,SAAS,EAAE,SAAS,EAAY;IAC5D,qBAAO,qKAAC;QAAW,GAAG,SAAS;;;;;;AACjC"}},
+    {"offset": {"line": 63, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

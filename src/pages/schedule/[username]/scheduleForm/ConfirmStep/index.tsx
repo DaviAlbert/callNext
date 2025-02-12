@@ -38,20 +38,16 @@ export function ConfirmStep({
 
   async function handleConfirmScheduling(data: ConfirmFormData) {
     const { name, email, observations } = data
-    try {
-      await api.post(`/users/${username}/schedule`, {
-        name,
-        email,
-        observations,
-        date: schedulingDate,
-      })
-      onCancelConfirmation()
-    } catch (error) {
-      console.error("Error while confirming scheduling:", error)
-      // Optionally, display a user-friendly message or show an error state
-    }
+
+    await api.post(`/users/${username}/schedule`, {
+      name,
+      email,
+      observations,
+      date: schedulingDate,
+    })
+
+    onCancelConfirmation()
   }
-  
 
   const describedDate = dayjs(schedulingDate).format('DD[ de ]MMMM[ de ]YYYY')
   const describedTime = dayjs(schedulingDate).format('HH:mm[h]')

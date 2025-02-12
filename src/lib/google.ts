@@ -24,18 +24,24 @@ export async function getGoogleOAuthToken(userId: string) {
   if (!account.expires_at) {
     return auth
   }
-  if (!account.access_token || !account.refresh_token) {
-    throw new Error('Missing access_token or refresh_token for user');
-  }
 
   const isTokenExpired = dayjs(account.expires_at * 1000).isBefore(new Date())
 
   if (isTokenExpired) {
     const { credentials } = await auth.refreshAccessToken()
-    const {access_token,expiry_date,id_token,refresh_token,scope,token_type} = credentials
+    const {
+      access_token,
+      expiry_date,
+      id_token,
+      refresh_token,
+      scope,
+      token_type,
+    } = credentials
 
     await prisma.account.update({
-      where: {id: account.id,},
+      where: {
+        id: account.id,
+      },
       data: {
         access_token,
         expires_at: expiry_date ? Math.floor(expiry_date / 1000) : null,
@@ -43,7 +49,8 @@ export async function getGoogleOAuthToken(userId: string) {
         refresh_token,
         scope,
         token_type,
-      }})
+      },
+    })
 
     auth.setCredentials({
       access_token,

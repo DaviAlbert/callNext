@@ -16,6 +16,8 @@
     "axios": "^1.7.9",
     "call": "file:",
     "cors": "^2.8.5",
+    "dayjs": "^1.11.13",
+    "googleapis": "^144.0.0",
     "next": "^15.1.6",
     "next-auth": "^4.24.11",
     "next-seo": "^6.6.0",
